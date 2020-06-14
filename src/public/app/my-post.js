@@ -20,11 +20,12 @@ function myPosts() {
                         <h6 class="card-subtitle mb-2 text-muted">${p.user.username}</h6>
                         <p class="card-text">
                           ${p.body.substr(0,200)} 
-                          <a href="#" class="read_more" onClick=myPost(${p.id})>read more</a>
                           <span class="more_text" style="display:none;"> ${p.body.substr(200,p.body.length)}</span>
                         </p>
+                        <pre>
+                        <a href="#" class="read_more" onClick=myPost(${p.id})>Read more</a>
                         <a href="#" class="card-link" onClick=myFunc(${p.id})>Comment</a>
-                        <a href="#" class="card-link">Like</a>
+                        </pre>
                       </div>
                     </div>
                   </div>
