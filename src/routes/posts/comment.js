@@ -3,6 +3,7 @@ const { Router } = require('express')
 const {
   commentOfPost,createNewComment
 } = require('../../controllers/comments')
+const { Users } = require('../../db/models')
 
 const route = Router()
 

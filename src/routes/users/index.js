@@ -2,7 +2,8 @@ const { Router } = require('express')
 const { 
   createAnonUser,
   getUserById,
-  getUserByUsername
+  getUserByUsername,
+  findAllUsers
 } = require('../../controllers/users')
 
 const route = Router()
@@ -18,7 +19,6 @@ route.get('/:id', async (req, res) => {
     // when param is user id
     user = await getUserById(req.params.id)
   }
-
   console.log(user)
 
   if (user) {
@@ -29,6 +29,11 @@ route.get('/:id', async (req, res) => {
     })
   }
 })
+
+route.get('/', async(req,res)=>{
+    const users= await findAllUsers()
+    res.status(200).send(users)
+  })
 
 route.post('/', async (req, res) => {
   const user = await createAnonUser()

@@ -1,10 +1,10 @@
-  
+const { Users } = require('../../db/models')  
 const { Router } = require('express')
 const {
   findAllPosts,
-  createNewPost
+  createNewPost,
+  findPostByUId,
 } = require('../../controllers/posts')
-
 const route = Router()
 
 route.get('/', async (req, res) => {
@@ -12,6 +12,21 @@ route.get('/', async (req, res) => {
   res.status(200).send(posts)
 })
 
+route.get('/:id', async(req,res)=>{
+    const posts = await findPostByUId(req.params.id)
+    res.status(200).send(posts)
+})
+
+route.post('/:name', async(req,res)=>{
+  const user = await Users.findOne({ where: { username:req.params.name } })
+  if(user){
+    const posts = await findPostByUId(user.id)
+    res.status(200).send(posts)
+  }
+  else if(!user){
+    res.send('varun')
+  }
+})
 route.post('/', async (req, res) => {
   const { userId, title, body } = req.body
   

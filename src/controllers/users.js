@@ -17,10 +17,17 @@ async function getUserByUsername(username) {
   return await Users.findOne({ where: { username } })
 }
 
+async function findAllUsers(query) {
+    // TODO: Handle query params
+    const users = await Users.findAll()
+  
+    return users
+  }
 module.exports = {
   createAnonUser,
   getUserById,
   getUserByUsername,
+  findAllUsers
 }
 
 /*  Test Code */

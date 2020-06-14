@@ -12,8 +12,10 @@ function loadPosts() {
                   ${p.body.substr(0,200)} 
                   <span class="more_text" style="display:none;"> ${p.body.substr(200,p.body.length)}</span>
                 </p>
-                <a href="#" class="read_more" onClick=myPost(${p.id})>read more</a>
+                <pre>
+                <a href="#" class="read_more" onClick=myPost(${p.id})>Read more</a>
                 <a href="#" class="card-link" onClick=myFunc(${p.id})>Comment</a>
+                </pre>
               </div>
             </div>
           </div>

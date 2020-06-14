@@ -12,7 +12,7 @@ app.use(express.urlencoded({extended: true}))
 
 app.use('/api/users', usersRoute)
 app.use('/api/posts', postsRoute)
-app.use('api/comments',commentsRoute)
+app.use('/api/comments',commentsRoute)
 app.use('/', express.static(__dirname + '/public'))
 
 db.sync()

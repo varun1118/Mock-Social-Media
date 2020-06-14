@@ -1,5 +1,5 @@
 $(() => {
-    $('#navbar').load('/components/navbar.html', loginIfNeeded)
+    $('#navbar').load('/components/navbar.html',loginIfNeeded)
     $('#footer').load('/components/footer.html')
     $('#content').load('/components/all-posts.html') // this contains it's own scripts too
   })
@@ -9,11 +9,11 @@ $(() => {
       ? JSON.parse(window.localStorage.user)
       : null
     if (!currentUser) {
-      $.post('/api/users', {}, (user) => {
+      $.post('/api/users',{} ,(user) => {
         if (user) {
           console.log('registered current user as ', user.username)
           window.localStorage.user = JSON.stringify(user)
-          currentUser = user
+          currentUser = window.localStorage.user
           $('#nav-username').text(currentUser.username)
         }
       })

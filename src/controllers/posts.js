@@ -1,5 +1,5 @@
 const { Posts, Users } = require('../db/models')
-
+const{ getUserByUsername }=require('./users')
 async function createNewPost(userId, title, body) {
   const post = await Posts.create({
     title,
@@ -23,9 +23,20 @@ async function findAllPosts(query) {
   return posts
 }
 
+
+async function findPostByUId(id){
+  const posts = await Posts.findAll({ where:{userId:id},
+    include: [ Users ]
+  })
+
+  return posts
+}
+ 
+
 module.exports = {
   createNewPost,
-  findAllPosts
+  findAllPosts,
+  findPostByUId,
 }
 
 /* Test Code */
