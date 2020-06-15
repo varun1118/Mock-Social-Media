@@ -61,17 +61,17 @@ flush privileges;
 ### Posts
 1.create post this will create a new post, required fields are
 
-a. username (the author of this post)
+    a. username (the author of this post)
 
-b. title
+    b. title
 
-c. body
+    c. body
 
 2.show all posts list all existing posts, we should have following filtering support
 
-a. filter by username
+    a. filter by username
 
-b. filter by userid (search by id of particular user)
+    b. filter by userid (search by id of particular user)
  ### Comments
 1.show all comments (under a post)
 
@@ -79,8 +79,9 @@ b. filter by userid (search by id of particular user)
 
 ## API Documentation
 
-``users
-``
+```
+users
+```
 
 ***POST /users***
 
@@ -98,8 +99,9 @@ Get an user with a given username
 
 Get a list of all users
 
-``Posts
-``
+```
+Posts
+```
 
 ***GET /posts***
 
