@@ -123,8 +123,9 @@ Get all posts by particular userid
 
 Get all posts by particular username
 
-``Comments
-``
+```
+Comments
+```
 
 ***GET /comments/{postid}***
 
